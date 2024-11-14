@@ -10,10 +10,13 @@
 
 palavra_escolida = []
 letra_jogada = []
-vida_jogador = 5
+vida_jogador = 6
 ganhou = False
 
 palavra = input('Informe a palavra: ')
+for i in range(10):
+    print("")
+
 palavra_escolida = palavra
 
 
@@ -24,9 +27,13 @@ while True:
         else:
             print('_', end = ' ')
     print('')
-    print('voce tem {} chances'. format(vida_jogador))
+    print('voce tem {} chances'.format(vida_jogador))
+    print('Letras jogadas: ', letra_jogada)
     
     tentativa = input('Escolha uma letra: ')
+    if tentativa in letra_jogada:
+        print('Você ja jogou essa letra')
+        continue
     letra_jogada.append(tentativa.lower())
     
     if tentativa.lower() not in palavra_escolida.lower():
